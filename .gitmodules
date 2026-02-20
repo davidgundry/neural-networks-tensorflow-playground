@@ -1,0 +1,3 @@
+[submodule "src/slideberry"]
+	path = src/slideberry
+	url = git@github.com:davidgundry/slideberry.git

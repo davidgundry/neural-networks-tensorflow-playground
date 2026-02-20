@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "type": "npm",
+            "script": "typecheck",
+            "problemMatcher": [],
+            "label": "npm: typecheck",
+            "detail": "tsc --noEmit"
+        },
+        {
+"label": "Markdown to Slides",
+            "type": "shell",
+            "command": "npx",
+            "args": [
+                "ts-node",
+                "${workspaceFolder}/script/markdownToSlides.ts",
+                "${input:toSlideMode}",
+                "${file}",
+                "${fileDirname}/${fileBasenameNoExtension}.tsx"
+            ],
+            "problemMatcher": []
+        },
+    ],
+    "inputs": [
+        {
+            "id": "toSlideMode",
+            "type": "pickString",
+            "description": "Does each group begin with section content (notes), or only slide content?",
+            "options": [
+                {"label": "Section", "value": "section" },
+                {"label": "Slide", "value": "slide" },
+            ]
+          }]
+}
