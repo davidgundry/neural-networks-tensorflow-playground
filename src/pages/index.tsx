@@ -8,6 +8,7 @@ import BackgroundImage from "../images/background_freepik.svg"
 import { App } from "../slideberry/app/App"
 
 import { metadata as playground } from "../content/neural-networks/playground"
+import { FooterDecoration } from "../FooterDecoration"
 
 
 const pages = [playground]
@@ -52,19 +53,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
     </main>
 
-            <div style={{
-            zIndex: -1000,
-            backgroundColor: "#30799d",
-            backgroundImage: `url(${BackgroundImage}), linear-gradient(to bottom, #30799d, #6099ad)`,
-            backgroundPosition: "bottom",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "100% 400px",
-            position: "fixed",
-            top: 0,
-            bottom:0,
-            left:0,
-            right:0,
-    }}></div>
+    <FooterDecoration />
     </App>
 }
 
