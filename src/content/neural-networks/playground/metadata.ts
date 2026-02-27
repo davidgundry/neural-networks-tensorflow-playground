@@ -8,11 +8,11 @@ const metadata: TopicMetadata =
     summary: "Learning about how neural networks are able to solve complex problems ",
     slug: "playground",
 
-    links: ["lectures","practicals", "demos"],
+    links: ["practicals", "demos"], // "lectures"
     learningOutcomes: [
-        { overall: "Understand that neural networks learn to approximate functions" },
-        { overall: "Understand the importance of input features" },
-        { overall: "Recognise that the architecture of the neural network affects the patterns it can recognise" }
+        { overall: "Understand how neural networks work​" },
+        { overall: "Create a neural network to classify data​" },
+        { overall: "Reason about what problems neural networks can(not) solve" }
     ]
 }
 export default metadata;
