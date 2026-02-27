@@ -20,6 +20,7 @@ import { KeyPoint } from "../../../slideberry/theme/programming/components/KeyPo
 import { CodeBlk } from "../../../slideberry/theme/programming/components/CodeBlk";
 import { SlideBox } from "../../../slideberry/theme/programming/components/SlideBox";
 import { M } from "../../../slideberry/pagecontent/math/Math";
+import { ShowAnswer } from "../../../slideberry/theme/programming/components/ShowAnswer";
 
 import metadata from "./metadata";`;
 

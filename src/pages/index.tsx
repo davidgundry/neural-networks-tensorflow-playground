@@ -3,16 +3,17 @@ import { Link, type PageProps } from "gatsby"
 import { ListItemButton, ListItemText, Paper } from "@mui/material"
 import { List, Divider } from "@mui/material"
 import { LinkList } from "../slideberry/navigation/LinkList"
-import { moduleInformationMetadata } from "./module-information"
 import { SimplePage } from "../slideberry/app/SimplePage"
 import BackgroundImage from "../images/background_freepik.svg"
 import { App } from "../slideberry/app/App"
 
+import { metadata as playground } from "../content/neural-networks/playground"
 
-const pages = [moduleInformationMetadata]
+
+const pages = [playground]
 
 const metadata = {
-  title: "Slideberry",
+  title: "Neural Networks with Tensorflow Playground",
   author: "David Gundry",
   summary: "",
   slug: ""
@@ -30,15 +31,19 @@ const IndexPage: React.FC<PageProps> = () => {
                     marginTop: 2,
                     marginBottom: 2,
                 }}>
-    <LinkList pages={pages} prefix=""/>
+    <LinkList pages={pages} prefix="lectures"/>
 
       <List component="nav">
-          <ListItemButton component={Link} to={"/lectures/"} key={"lectures"} alignItems="flex-start">
-            <ListItemText primary="Lectures"/>
+          <ListItemButton component={Link} to={"/lectures/playground/"} key={"lectures"} alignItems="flex-start">
+            <ListItemText primary="Lecture"/>
           </ListItemButton>
 
-          <ListItemButton component={Link} to={"/practicals/"} key={"practicals"} alignItems="flex-start">
-            <ListItemText primary="Practicals"/>
+          <ListItemButton component={Link} to={"/practicals/playground"} key={"practicals"} alignItems="flex-start">
+            <ListItemText primary="Practical"/>
+          </ListItemButton>
+
+          <ListItemButton component={Link} to={"/practicals/playground"} key={"demos"} alignItems="flex-start">
+            <ListItemText primary="Demo"/>
           </ListItemButton>
 
           <Divider variant="inset" component="li" />

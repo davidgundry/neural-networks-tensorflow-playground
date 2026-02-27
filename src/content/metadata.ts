@@ -1,8 +1,6 @@
 import { TopicMetadata } from "../slideberry/app/Metadata"
-import { metadata as introduction } from "./slideberry/1-introduction"
-
-
+import { metadata as playground } from "./neural-networks/playground"
 
 export const metadata: TopicMetadata[] = [
-    introduction,
+    playground
 ]

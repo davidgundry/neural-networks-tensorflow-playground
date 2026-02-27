@@ -1,8 +1,8 @@
 {
-  "name": "slideberry",
+  "name": "neural-networks-with-tensorflow-playground",
   "version": "1.0.0",
   "private": true,
-  "description": "Slideberry example project",
+  "description": "Activity introducing neural networks using Tensorflow Playground",
   "author": "David Gundry",
   "keywords": [
     "gatsby"

@@ -9,6 +9,7 @@ import { KeyPoint } from "../../../slideberry/theme/programming/components/KeyPo
 import { CodeBlk } from "../../../slideberry/theme/programming/components/CodeBlk";
 import { SlideBox } from "../../../slideberry/theme/programming/components/SlideBox";
 import { M } from "../../../slideberry/pagecontent/math/Math";
+import { ShowAnswer } from "../../../slideberry/theme/programming/components/ShowAnswer";
 
 import metadata from "./metadata";
 
@@ -20,29 +21,26 @@ const Lecture = () => {
                 <TitleSlide metadata={metadata} />
             </Slide>
             <Section h2={metadata.title} hideCheck math hideInNav>
-        <p>This presentation will give an introduction to the Slideberry slide library</p>
+        <p>import { TopicMetadata } from "../../../slideberry/app/Metadata";</p>
+
+        <p>const metadata: TopicMetadata =
+{
+    title: "Neural Networks",
+    author: "David Gundry",
+    module: "Tensorflow Playground",
+    summary: "Learning about how neural networks are able to solve complex problems ",
+    slug: "playground",</p>
+
+        <CodeBlk language="plaintext" text={`links: ["lectures","practicals", "demos"],
+learningOutcomes: [
+    { overall: "Understand that neural networks learn to approximate functions" },
+    { overall: "Understand the importance of input features" },
+    { overall: "Recognise that the architecture of the neural network affects the patterns it can recognise" }
+]`} />
+        <p>}
+export default metadata;</p>
 
     </Section>
-    <Slide>
-        <MainSlide>
-            <h3></h3>
-        </MainSlide>
-    </Slide>
-</Group>
-
-<Group>
-    <Section h3="Slideberry">
-    </Section>
-    <Slide>
-        <MainSlide>
-            <h3>Slideberry</h3>
-            <ul>
-<li>Open source slide/presentation library</li>
-<li>React/Gatsby</li>
-</ul>
-
-        </MainSlide>
-    </Slide>
 </Group>
 
 </>
