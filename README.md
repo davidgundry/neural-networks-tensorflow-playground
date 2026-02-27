@@ -1,5 +1,7 @@
 # Neural Networks with Tensorflow Playground
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a4da2338-586c-40a9-bb72-8c716ddeb5cf/deploy-status)](https://app.netlify.com/projects/neuralnetworkstensorflowplayground/deploys)
+
 This activity teaches an introduction to neural networks using the Scienxlab version of [Tensorflow Playground](https://playground.scienxlab.org/).
 
 It is in three parts
