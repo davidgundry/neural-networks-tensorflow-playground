@@ -11,8 +11,8 @@ const config: GatsbyConfig = {
 
   },
   siteMetadata: {
-    title: `Slideberry`,
-    siteUrl: `https://slideberry.netlify.app`
+    title: `Neural Networks with Tensorflow Playground `,
+    siteUrl: `https://neuralnetworkstensorflowplayground.netlify.app/`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -41,9 +41,9 @@ const config: GatsbyConfig = {
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: `Slideberry Template Project`,
-      short_name: `Slideberry`,
-      description: `An example project for the Slideberry library`,
+      name: `Neural Networks with Tensorflow Playground`,
+      short_name: `NeuralNets`,
+      description: `Learn about Neural Networks with Tensorflow Playground`,
       start_url: `/`,
       background_color: `#f7f0eb`,
       theme_color: `#a2466c`,
