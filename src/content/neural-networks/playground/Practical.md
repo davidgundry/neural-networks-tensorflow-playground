@@ -11,7 +11,7 @@ Select the "Gaussian" data. This is data arranged according to a gaussian or nor
 
 #### Task:
 
-1. What is the simplest network that can classify this data? Use the interactive neural network to help you work this out.
+1. What is the simplest network that can classify this data from the X_1 and X_2 features? Use the interactive neural network to help you work this out.
 
 <ShowAnswer>0 hidden layers. Where there is low noise, only one feature is required (e.g. X_1), but if noise increases both X_1 and X_2 features are needed. Greater noise will lead to worse accuracy, and it is not possible to make a network that avoids this.</ShowAnswer>
 
@@ -44,7 +44,7 @@ Select the XOR data. This is an example problem which cannot be separated by a s
 
 #### Task: 
 
-1. Train a network that can classify this data with a low training loss (error). What is the lowest training loss you observe?
+1. Train a network that can classify this data with a low training loss (error), using the X_1 and X_2 features. What is the lowest training loss you observe?
 
 #### Task:
 
@@ -87,7 +87,7 @@ Select the "Moons" data.
 
 #### Task: 
 
-1. Train the the simplest network you can that can classify this data. For an extra challenge, try to reason about what the theoretically smallest network that can solve this problem would be.
+1. Train the the simplest network you can that can classify this dat, using the X_1 and X_2 features. For an extra challenge, try to reason about what the theoretically smallest network that can solve this problem would be.
 
 <ShowAnswer>2 hidden layers of 2 neurons using inputs X1, X2. We know we should be able to achieve this with 2 neurons per layer, because we can visually see that it can be solved in 2 dimensions: a single curving line can separate the data. We see that the line needs to curve twice (or curve back on itself), which requires at least two hidden layers.</ShowAnswer>
 
@@ -118,7 +118,7 @@ Select the "Spiral" data. This might take some training time because as you migh
 
 #### Task: 
 
-Which strategy seems to be the most helpful? What problems do you encounter training the network?
+Which strategy seems to be the most helpful? What problems do you encounter training the network? (Do not expect to successfully solve this problem using only the X_1 and X_2 features!) 
 
 ---
 
@@ -136,38 +136,17 @@ Which strategy seems to be the most helpful? What problems do you encounter trai
 
 ></>
 
-### Conclusion: Real World Applications
+### 5. Customise your network
 
-Real-world data is complex and highly dimensional. There are lots of different properties about the world that we can measure. This data is not random, however. It obeys complex patterns. 
+So far we have been using the default learning parameters for the neural network. We can modify some of these parameters to affect how the neural network learns.
 
-As humans, we know that by understanding the patterns of events around us, we are more able to make intelligent decisions. Neural networks learn to simplify these patterns to make decisions that appear intelligent, purely through the power of mathematics (and enough data).
+#### Task: Get familiar with the interface
 
-We have seen how to train neural networks that recognise simple patterns. The networks we have trained are tiny, but the same principles scale up - more data and more computation enables more complex patterns.
+1. Find the parameters section at the top of the page. Explore the various options. If at any time you want to reset everything back to the defaults, reference the screenshot below, or just close the tab and open [https://playground.scienxlab.org/](https://playground.scienxlab.org/) again.
 
-Some patterns seem so complicated that we cannot imagine a machine ever learning them. For example, learning the patterns of human communication. So, when a computer talks to us - as large language models (LLMs) are now able to do - part of us readily believes it must really be _thinking_.
+#### !
 
-In fact, consider that LLMs are neural networks with _billions_ of parameters (and an enormous carbon footprint in terms of energy consumption). They are trained on _trillions_ of words of text - almost all the text ever produced by the human race. With such astronomical amounts of data, neural networks get _really good_ at predicting the patterns in human communication, but that is all they are doing.
-
-So are AIs intelligent? That depends whether structure - relationships between data points, patterns - is sufficient for intelligence, or whether intelligence involves something more. This remains an open question.
-
->“The question of whether a computer can think is no more interesting than the question of whether a submarine can swim.” - Edsger W. Dijkstra
-
-
-## Extensions
-
-Interested and want to learn more? Some of these activities require more knowledge or experience.
-
-#### Further Reading
-
-Michael Nielsen, 2019. [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html)
-
-This activity and how it explains neural networks was inspired by Chris Olah's (2014) paper on [Neural Networks, Manifolds, and Topology](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/).
-
----
-
-### Key Concepts
-
-This section describes some of the key concepts that are involved in training the neural network.
+![A section of user interface with a selection of drop down options](./images/parameters.png)
 
 **Epoch** - The humber of times the training has cycled through the entire data set.
 
@@ -189,6 +168,74 @@ This section describes some of the key concepts that are involved in training th
 
 **Batch size** - This many data points are used in training between each update of the weights of the network. If batch size is 1, the network is updated after each training example. Batching data avoids slowing down training.
 
+#### Task: Explore the different Features
+
+2. So far we have worked with the X_1 and X_2 features. Tensorflow Playground allows you to select other features as inputs to the network. Experiment with combining these features in a network.
+
+#### !
+
+**X_1** / **X_2**: This is the x and y position of the dot
+
+**X_1X_2**: This is the x and y position multiplied together
+
+**X_12** / **X_22**: This is the square of the x position / the y position
+
+#### Task: Reattempt Spiral
+
+3. Using additional features and customising the learning parameters should make it possible to get a better solution for the "Spiral" data set. What is the lowest training loss you can achieve? 
+
+---
+
+![Animation showing changing the learning rate parameter in the Tensorflow Playground user interface and training a neural network](./images/learning-rate.gif)
+
+### Conclusion: Real World Applications
+
+Real-world data is often complex and highly dimensional. There are lots of different properties about the world that we can measure. This data is not random, however. It obeys complex patterns. 
+
+As humans, we know that by understanding the patterns of events around us, we are more able to make intelligent decisions. Neural networks learn to simplify these patterns to make decisions that appear intelligent, purely through the power of mathematics (and enough data).
+
+We have seen how to train neural networks that recognise simple patterns. The networks we have trained are tiny, but the same principles scale up - more data and more computation enables more complex patterns.
+
+Some patterns seem so complicated that we cannot imagine a machine ever learning them. For example, learning the patterns of human communication. So, when a computer talks to us - as large language models (LLMs) are now able to do - part of us readily believes it must really be _thinking_.
+
+In fact, consider that LLMs are neural networks with _billions_ of parameters (and an enormous carbon footprint in terms of energy consumption). They are trained on _trillions_ of words of text - almost all the text ever produced by the human race. With such astronomical amounts of data, neural networks get _really good_ at predicting the patterns in human communication, but that is all they are doing.
+
+So are AIs intelligent? That depends whether structure - relationships between data points, patterns - is sufficient for intelligence, or whether intelligence involves something more. This remains an open question.
+
+---
+
+<KeyPoint><p>Neural networks learn patterns in input data in order to predict an output variable</p></KeyPoint>
+
+This can be applied everywhere, including:
+
+><Column>
+
+* Healthcare
+* Finance
+* Transportation
+* Industry
+
+><Column>
+
+* Agriculture
+* Technology
+* Marketing
+* Education
+
+></>
+
+## Extensions
+
+Interested and want to keep learning after the session? Some of these activities require more knowledge or experience. If you are interested in pursuing these, talk to one of the lecturers who can give you some pointers and advice.
+
+#### Further Reading
+
+A good introductory text to neural networks, available for free online, is Michael Nielsen, 2019. [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html).
+
+This activity and how it explains neural networks was inspired by Chris Olah's (2014) paper on [Neural Networks, Manifolds, and Topology](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/). There are some complex mathematical ideas in here but these are presented with intuitive diagrams and animations.
+
+---
+
 ### Train on your own data
 
 The version of Tensorflow Playground used above allows you to upload your own data sets. This could be any data you are interested in and want to see what a neural network can learn from it.
@@ -209,7 +256,6 @@ You can use a tool such as [this one](https://jsonlint.com/csv-to-json) to conve
 
 Convert your own data into the correct JSON format and then upload to Tensorflow Playground to train a neural network on it.
 
----
 
 ### Use your neural network
 
@@ -235,4 +281,3 @@ You will need to first install the tensorflow package using
 pip install tensorflow
 ```
 
----

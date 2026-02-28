@@ -17,6 +17,8 @@ import Gaussian from "./images/gaussian.png"
 import Xor from "./images/xor.png"
 import Moons from "./images/moons.png"
 import Spiral from "./images/spiral.png"
+import Parameters from "./images/parameters.png"
+import LearningRate from "./images/learning-rate.gif"
 
     
 const Lecture = () => {
@@ -41,7 +43,7 @@ const Lecture = () => {
 
         <SlideBox type="task" title="">
         <ol>
-<li>What is the simplest network that can classify this data? Use the interactive neural network to help you work this out.</li>
+<li>What is the simplest network that can classify this data from the X_1 and X_2 features? Use the interactive neural network to help you work this out.</li>
 </ol>
 
         <p><ShowAnswer>0 hidden layers. Where there is low noise, only one feature is required (e.g. X_1), but if noise increases both X_1 and X_2 features are needed. Greater noise will lead to worse accuracy, and it is not possible to make a network that avoids this.</ShowAnswer></p>
@@ -83,7 +85,7 @@ const Lecture = () => {
 
         <SlideBox type="task" title="">
         <ol>
-<li>Train a network that can classify this data with a low training loss (error). What is the lowest training loss you observe?</li>
+<li>Train a network that can classify this data with a low training loss (error), using the X_1 and X_2 features. What is the lowest training loss you observe?</li>
 </ol>
 
         </SlideBox>
@@ -141,7 +143,7 @@ const Lecture = () => {
 
         <SlideBox type="task" title="">
         <ol>
-<li>Train the the simplest network you can that can classify this data. For an extra challenge, try to reason about what the theoretically smallest network that can solve this problem would be.</li>
+<li>Train the the simplest network you can that can classify this dat, using the X_1 and X_2 features. For an extra challenge, try to reason about what the theoretically smallest network that can solve this problem would be.</li>
 </ol>
 
         <p><ShowAnswer>2 hidden layers of 2 neurons using inputs X1, X2. We know we should be able to achieve this with 2 neurons per layer, because we can visually see that it can be solved in 2 dimensions: a single curving line can separate the data. We see that the line needs to curve twice (or curve back on itself), which requires at least two hidden layers.</ShowAnswer></p>
@@ -185,7 +187,7 @@ const Lecture = () => {
 </ol>
 
         <SlideBox type="task" title="">
-        <p>Which strategy seems to be the most helpful? What problems do you encounter training the network?</p>
+        <p>Which strategy seems to be the most helpful? What problems do you encounter training the network? (Do not expect to successfully solve this problem using only the X_1 and X_2 features!) </p>
 
         </SlideBox>
 
@@ -215,44 +217,17 @@ const Lecture = () => {
 </Group>
 
 <Group>
-    <Section h3="Conclusion: Real World Applications">
-        <p>Real-world data is complex and highly dimensional. There are lots of different properties about the world that we can measure. This data is not random, however. It obeys complex patterns. </p>
+    <Section h3="5. Customise your network">
+        <p>So far we have been using the default learning parameters for the neural network. We can modify some of these parameters to affect how the neural network learns.</p>
 
-        <p>As humans, we know that by understanding the patterns of events around us, we are more able to make intelligent decisions. Neural networks learn to simplify these patterns to make decisions that appear intelligent, purely through the power of mathematics (and enough data).</p>
-
-        <p>We have seen how to train neural networks that recognise simple patterns. The networks we have trained are tiny, but the same principles scale up - more data and more computation enables more complex patterns.</p>
-
-        <p>Some patterns seem so complicated that we cannot imagine a machine ever learning them. For example, learning the patterns of human communication. So, when a computer talks to us - as large language models (LLMs) are now able to do - part of us readily believes it must really be <em>thinking</em>.</p>
-
-        <p>In fact, consider that LLMs are neural networks with <em>billions</em> of parameters (and an enormous carbon footprint in terms of energy consumption). They are trained on <em>trillions</em> of words of text - almost all the text ever produced by the human race. With such astronomical amounts of data, neural networks get <em>really good</em> at predicting the patterns in human communication, but that is all they are doing.</p>
-
-        <p>So are AIs intelligent? That depends whether structure - relationships between data points, patterns - is sufficient for intelligence, or whether intelligence involves something more. This remains an open question.</p>
-
-    </Section>
-</Group>
-
-<Group>
-    <Section h2="Extensions">
-            <p>Interested and want to learn more? Some of these activities require more knowledge or experience.</p>
-
-            <SlideBox title="Further Reading">
-            <p>Michael Nielsen, 2019. <a href="http://neuralnetworksanddeeplearning.com/index.html">Neural Networks and Deep Learning</a></p>
-
-            <p>This activity and how it explains neural networks was inspired by Chris Olah's (2014) paper on <a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">Neural Networks, Manifolds, and Topology</a>.</p>
+        <SlideBox type="task" title="Get familiar with the interface">
+        <ol>
+<li>Find the parameters section at the top of the page. Explore the various options. If at any time you want to reset everything back to the defaults, reference the screenshot below, or just close the tab and open <a href="https://playground.scienxlab.org/">https://playground.scienxlab.org/</a> again.</li>
+</ol>
 
         </SlideBox>
 
-    </Section>
-    <Slide>
-        <HeadSlide>
-            <h2>Extensions</h2>
-        </HeadSlide>
-    </Slide>
-</Group>
-
-<Group>
-    <Section h3="Key Concepts">
-        <p>This section describes some of the key concepts that are involved in training the neural network.</p>
+        <p><img style={{ maxWidth: "100%" }} src={Parameters} alt="A section of user interface with a selection of drop down options" /></p>
 
         <p><strong>Epoch</strong> - The humber of times the training has cycled through the entire data set.</p>
 
@@ -274,7 +249,98 @@ const Lecture = () => {
 
         <p><strong>Batch size</strong> - This many data points are used in training between each update of the weights of the network. If batch size is 1, the network is updated after each training example. Batching data avoids slowing down training.</p>
 
+        <SlideBox type="task" title="Explore the different Features">
+        <ol start={2}>
+<li>So far we have worked with the X_1 and X_2 features. Tensorflow Playground allows you to select other features as inputs to the network. Experiment with combining these features in a network.</li>
+</ol>
+
+        </SlideBox>
+
+        <p><strong>X_1</strong> / <strong>X_2</strong>: This is the x and y position of the dot</p>
+
+        <p><strong>X_1X_2</strong>: This is the x and y position multiplied together</p>
+
+        <p><strong>X_12</strong> / <strong>X_22</strong>: This is the square of the x position / the y position</p>
+
+        <SlideBox type="task" title="Reattempt Spiral">
+        <ol start={3}>
+<li>Using additional features and customising the learning parameters should make it possible to get a better solution for the "Spiral" data set. What is the lowest training loss you can achieve?</li>
+</ol>
+
+        </SlideBox>
+
     </Section>
+    <Slide>
+        <MainSlide>
+            <h3>5. Customise your network</h3>
+            <p><img style={{ width: "100%" }} src={LearningRate} alt="Animation showing changing the learning rate parameter in the Tensorflow Playground user interface and training a neural network" /></p>
+
+        </MainSlide>
+    </Slide>
+</Group>
+
+<Group>
+    <Section h3="Conclusion: Real World Applications">
+        <p>Real-world data is often complex and highly dimensional. There are lots of different properties about the world that we can measure. This data is not random, however. It obeys complex patterns. </p>
+
+        <p>As humans, we know that by understanding the patterns of events around us, we are more able to make intelligent decisions. Neural networks learn to simplify these patterns to make decisions that appear intelligent, purely through the power of mathematics (and enough data).</p>
+
+        <p>We have seen how to train neural networks that recognise simple patterns. The networks we have trained are tiny, but the same principles scale up - more data and more computation enables more complex patterns.</p>
+
+        <p>Some patterns seem so complicated that we cannot imagine a machine ever learning them. For example, learning the patterns of human communication. So, when a computer talks to us - as large language models (LLMs) are now able to do - part of us readily believes it must really be <em>thinking</em>.</p>
+
+        <p>In fact, consider that LLMs are neural networks with <em>billions</em> of parameters (and an enormous carbon footprint in terms of energy consumption). They are trained on <em>trillions</em> of words of text - almost all the text ever produced by the human race. With such astronomical amounts of data, neural networks get <em>really good</em> at predicting the patterns in human communication, but that is all they are doing.</p>
+
+        <p>So are AIs intelligent? That depends whether structure - relationships between data points, patterns - is sufficient for intelligence, or whether intelligence involves something more. This remains an open question.</p>
+
+    </Section>
+    <Slide>
+        <MainSlide>
+            <h3>Conclusion: Real World Applications</h3>
+            <KeyPoint><p>Neural networks learn patterns in input data in order to predict an output variable</p></KeyPoint>
+            <p>This can be applied everywhere, including:</p>
+
+			<Columns>
+				<div>
+            <ul>
+<li>Healthcare</li>
+<li>Finance</li>
+<li>Transportation</li>
+<li>Industry</li>
+</ul>
+
+				</div>
+				<div>
+            <ul>
+<li>Agriculture</li>
+<li>Technology</li>
+<li>Marketing</li>
+<li>Education</li>
+</ul>
+
+				</div>
+			</Columns>
+        </MainSlide>
+    </Slide>
+</Group>
+
+<Group>
+    <Section h2="Extensions">
+            <p>Interested and want to keep learning after the session? Some of these activities require more knowledge or experience. If you are interested in pursuing these, talk to one of the lecturers who can give you some pointers and advice.</p>
+
+            <SlideBox title="Further Reading">
+            <p>A good introductory text to neural networks, available for free online, is Michael Nielsen, 2019. <a href="http://neuralnetworksanddeeplearning.com/index.html">Neural Networks and Deep Learning</a>.</p>
+
+            <p>This activity and how it explains neural networks was inspired by Chris Olah's (2014) paper on <a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">Neural Networks, Manifolds, and Topology</a>. There are some complex mathematical ideas in here but these are presented with intuitive diagrams and animations.</p>
+
+        </SlideBox>
+
+    </Section>
+    <Slide>
+        <HeadSlide>
+            <h2>Extensions</h2>
+        </HeadSlide>
+    </Slide>
 </Group>
 
 <Group>
@@ -306,11 +372,6 @@ const Lecture = () => {
         <p>Convert your own data into the correct JSON format and then upload to Tensorflow Playground to train a neural network on it.</p>
 
     </Section>
-    <Slide>
-        <MainSlide>
-            <h3>Train on your own data</h3>
-        </MainSlide>
-    </Slide>
 </Group>
 
 <Group>
@@ -332,11 +393,6 @@ forward(0.5, 0.2)`} />
 
         <CodeBlk language="bash" text={`pip install tensorflow`} />
     </Section>
-    <Slide>
-        <MainSlide>
-            <h3>Use your neural network</h3>
-        </MainSlide>
-    </Slide>
 </Group>
 
 </>
